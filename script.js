@@ -5,17 +5,16 @@ buttons.forEach((button) => {
     const x = e.clientX
     const y = e.clientY
 
-    const buttonTop = e.target.offsetTop
-    const buttonLeft = e.target.offsetLeft
+    const buttonX = e.target.offsetLeft
+    const buttonY = e.target.offsetTop
 
-    const xInside = x - buttonLeft
-    const yInside = y - buttonTop
+    const xInside = x - buttonX
+    const yInside = y - buttonY
 
     const circle = document.createElement('span')
     circle.classList.add('circle')
-    circle.style.top = yInside + 'px'
     circle.style.left = xInside + 'px'
-
+    circle.style.top = yInside + 'px'
     this.appendChild(circle)
 
     setTimeout(() => circle.remove(), 500)
